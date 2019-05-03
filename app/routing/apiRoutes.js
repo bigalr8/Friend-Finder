@@ -17,9 +17,10 @@ var cmptblty =0;
     app.post("/api/friends", function(req, res) {
        
       var newfriend = req.body;
-           
+      console.log(res);     
       newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
     
+      console.log(newfriend);
       friendData.push(newfriend);
     
       newArray = newfriend.scores;
@@ -35,6 +36,8 @@ var cmptblty =0;
     });//end post
 
     function compare() {
+      console.log("compArray: " + compArray);
+      console.log("newArray: " + newArray);
     cmptblty = 0;
       for (j=0;j<compArray.length;j++) {
            
